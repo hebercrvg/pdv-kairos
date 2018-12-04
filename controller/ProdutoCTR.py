@@ -123,7 +123,7 @@ class ProdutoCTR:
         dlg.setWindowTitle("Sucesso")
         dlg.setIcon(QMessageBox.Information)
         dlg.setWindowIcon(QtGui.QIcon("greencheck.png"))
-        dlg.setText("Produto excluido com sucesso!")
+        dlg.setText("Produto excluido com sucesso.")
         font = QFont()
         font.setFamily("Arial")
         font.setPointSize(15)
