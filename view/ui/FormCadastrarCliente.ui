@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FormCadastrarCliente</class>
+ <widget class="QMainWindow" name="FormCadastrarCliente">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>489</width>
+    <height>205</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Cadastrar Cliente</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../img/cadastrar usuario 2.png</normaloff>../../img/cadastrar usuario 2.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="labelNome">
+    <property name="geometry">
+     <rect>
+      <x>75</x>
+      <y>79</y>
+      <width>31</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Nome:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelTelefone">
+    <property name="geometry">
+     <rect>
+      <x>75</x>
+      <y>105</y>
+      <width>46</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Telefone:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="editTelefone">
+    <property name="geometry">
+     <rect>
+      <x>127</x>
+      <y>105</y>
+      <width>91</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="inputMask">
+     <string>(00)00000-0000</string>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Normal</enum>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="editNome">
+    <property name="geometry">
+     <rect>
+      <x>127</x>
+      <y>79</y>
+      <width>291</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="inputMask">
+     <string/>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Normal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>20</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Cadastrar Cliente</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>154</x>
+      <y>138</y>
+      <width>168</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
+      <widget class="QPushButton" name="btnCadastrar">
+       <property name="text">
+        <string>Cadastrar</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../img/salvar usuario.png</normaloff>../../img/salvar usuario.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>25</width>
+         <height>25</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="btnLimpar">
+       <property name="text">
+        <string>Limpar</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../img/borracha.png</normaloff>../../img/borracha.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>25</width>
+         <height>25</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <tabstops>
+  <tabstop>editNome</tabstop>
+  <tabstop>editTelefone</tabstop>
+  <tabstop>btnCadastrar</tabstop>
+  <tabstop>btnLimpar</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btnLimpar</sender>
+   <signal>clicked()</signal>
+   <receiver>editNome</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>264</x>
+     <y>156</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>259</x>
+     <y>88</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnLimpar</sender>
+   <signal>clicked()</signal>
+   <receiver>editTelefone</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>298</x>
+     <y>148</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>211</x>
+     <y>119</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FormCadastrarProduto</class>
+ <widget class="QMainWindow" name="FormCadastrarProduto">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>476</width>
+    <height>205</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Cadastrar Produto</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../img/listar produtos.png</normaloff>../../img/listar produtos.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>10</y>
+      <width>151</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Cadastrar Produto</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelPreco">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>80</y>
+      <width>16</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>R$:</string>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="precoSpinBox">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>80</y>
+      <width>81</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="prefix">
+     <string/>
+    </property>
+    <property name="suffix">
+     <string/>
+    </property>
+    <property name="maximum">
+     <double>99.989999999999995</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelDescricao">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>53</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Descrição:</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>120</y>
+      <width>168</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="btnCadastrar">
+       <property name="text">
+        <string>Cadastrar</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../img/salvar produtos.png</normaloff>../../img/salvar produtos.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>25</width>
+         <height>25</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnLimpar">
+       <property name="text">
+        <string>Limpar</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../img/borracha.png</normaloff>../../img/borracha.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>25</width>
+         <height>25</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLineEdit" name="editDescricao">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>54</y>
+      <width>191</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="inputMask">
+     <string/>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Normal</enum>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="tipoComboBox">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>54</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>COMIDA</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>BEBIDA</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>SORVETE/AÇAI</string>
+     </property>
+    </item>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <tabstops>
+  <tabstop>editDescricao</tabstop>
+  <tabstop>tipoComboBox</tabstop>
+  <tabstop>precoSpinBox</tabstop>
+  <tabstop>btnCadastrar</tabstop>
+  <tabstop>btnLimpar</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btnLimpar</sender>
+   <signal>clicked()</signal>
+   <receiver>editDescricao</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>306</x>
+     <y>153</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>209</x>
+     <y>70</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnLimpar</sender>
+   <signal>clicked()</signal>
+   <receiver>precoSpinBox</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>273</x>
+     <y>133</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>93</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
