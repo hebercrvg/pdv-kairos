@@ -105,7 +105,7 @@ class Ui_FormDevedores(object):
         font.setPointSize(10)
         self.btnPesquisarCliente.setFont(font)
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("img/lupa.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("lupa.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnPesquisarCliente.setIcon(icon1)
         self.btnPesquisarCliente.setIconSize(QtCore.QSize(16, 16))
         self.btnPesquisarCliente.setObjectName("btnPesquisarCliente")
