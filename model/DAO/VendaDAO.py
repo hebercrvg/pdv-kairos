@@ -21,7 +21,7 @@ class VendaDAO:
         conn = ConexaoBanco.get_conexao()
         query = ("""SELECT V.CODVENDA, C.CODCLI, C.NOME, strftime('%d/%m/%Y', V.dtvenda) AS 'DATA VENDA',
                  V.VALORVENDA, V.VALORPAGO,
-                 V.VALORVENDA-V.VALORPAGO AS 'DIVIDA VENDA'
+                 ROUND(V.VALORVENDA-V.VALORPAGO, 2) AS 'DIVIDA VENDA'
                  FROM CLIENTE C
                  INNER JOIN VENDA V
                  ON C.CODCLI = V.CODCLI
@@ -33,7 +33,7 @@ class VendaDAO:
     def pesquisar_devedor_por_divida(nome):
         conn = ConexaoBanco.get_conexao()
         query = ("SELECT V.CODVENDA, C.CODCLI, C.NOME, strftime('%d/%m/%Y', V.dtvenda),"
-                 "V.VALORVENDA, V.VALORPAGO, V.VALORVENDA-V.VALORPAGO AS 'DIVIDA' \n"
+                 "V.VALORVENDA, V.VALORPAGO, ROUND(V.VALORVENDA-V.VALORPAGO, 2) AS 'DIVIDA' \n"
                  "FROM CLIENTE C \n"
                  "INNER JOIN VENDA V \n"
                  "ON C.CODCLI = V.CODCLI \n"
@@ -48,7 +48,7 @@ class VendaDAO:
     def pesquisar_todos_devedores():
         conn = ConexaoBanco.get_conexao()
         query = ("""SELECT V.CODVENDA, C.CODCLI, C.NOME,
-                 SUM(V.VALORVENDA-V.VALORPAGO) AS 'DIVIDA'
+                 ROUND(SUM(V.VALORVENDA-V.VALORPAGO), 2) AS 'DIVIDA'
                  FROM CLIENTE C
                  INNER JOIN VENDA V
                  ON C.CODCLI = V.CODCLI
@@ -61,7 +61,7 @@ class VendaDAO:
     def pesquisar_devedor(nome):
         conn = ConexaoBanco.get_conexao()
         query = ("SELECT V.CODVENDA, C.CODCLI, C.NOME, strftime('%d/%m/%Y', V.dtvenda),"
-                 "V.VALORVENDA, V.VALORPAGO, SUM(V.VALORVENDA-V.VALORPAGO) AS 'DIVIDA' \n"
+                 "V.VALORVENDA, V.VALORPAGO, ROUND(SUM(V.VALORVENDA-V.VALORPAGO), 2) AS 'DIVIDA' \n"
                  "FROM CLIENTE C \n"
                  "INNER JOIN VENDA V \n"
                  "ON C.CODCLI = V.CODCLI \n"

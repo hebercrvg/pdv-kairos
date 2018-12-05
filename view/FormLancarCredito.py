@@ -31,7 +31,8 @@ class Ui_FormLancarCredito(object):
             font.setFamily("Arial")
             font.setPointSize(15)
             msg.setFont(font)
-            text = ("Erro: O valor do crédito não pode ser maior que o valor da venda.")
+            text = ("Erro: O valor do crédito não pode ser maior que o valor da venda. \n"
+                    "Valor máximo a ser pago: R$ {}".format(valorvenda-valorpago))
             msg.setText(text)
             msg.exec_()
 
@@ -44,7 +45,8 @@ class Ui_FormLancarCredito(object):
             font.setFamily("Arial")
             font.setPointSize(15)
             msg.setFont(font)
-            text = ("Erro: O valor do crédito não pode ser igual a 0 (zero).")
+            text = ("Erro: O valor do crédito não pode ser igual a 0 (zero). \n"
+                    "Valor máximo a ser pago: R$ {}".format(valorvenda-valorpago))
             msg.setText(text)
             msg.exec_()
 
