@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>853</width>
+    <width>601</width>
     <height>471</height>
    </rect>
   </property>
@@ -21,7 +21,7 @@
    <widget class="QLabel" name="labelCliente">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>20</x>
       <y>20</y>
       <width>51</width>
       <height>21</height>
@@ -39,9 +39,9 @@
    <widget class="QLineEdit" name="editPesquisaCliente">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>70</x>
       <y>20</y>
-      <width>371</width>
+      <width>331</width>
       <height>21</height>
      </rect>
     </property>
@@ -53,8 +53,8 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>60</y>
-      <width>831</width>
+      <y>70</y>
+      <width>581</width>
       <height>301</height>
      </rect>
     </property>
@@ -117,39 +117,6 @@
     </column>
     <column>
      <property name="text">
-      <string>DATA VENDA</string>
-     </property>
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>VALOR VENDA</string>
-     </property>
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>VALOR PAGO</string>
-     </property>
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-    </column>
-    <column>
-     <property name="text">
       <string>A PAGAR</string>
      </property>
      <property name="font">
@@ -163,7 +130,7 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>560</x>
+      <x>420</x>
       <y>15</y>
       <width>166</width>
       <height>31</height>
@@ -228,61 +195,33 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QPushButton" name="btnExportar">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>370</y>
-      <width>271</width>
-      <height>40</height>
+      <x>160</x>
+      <y>390</y>
+      <width>269</width>
+      <height>38</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <item>
-      <widget class="QPushButton" name="btnInserirCredito">
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Inserir Crédito</string>
-       </property>
-       <property name="icon">
-        <iconset>
-         <normaloff>../../img/credit.png</normaloff>../../img/credit.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>30</width>
-         <height>30</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="btnExportar">
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Exportar</string>
-       </property>
-       <property name="icon">
-        <iconset>
-         <normaloff>../../img/pdf.png</normaloff>../../img/pdf.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>30</width>
-         <height>30</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Exportar</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../../img/pdf.png</normaloff>../../img/pdf.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -292,7 +231,6 @@
   <tabstop>btnPesquisarCliente</tabstop>
   <tabstop>btnLimpar</tabstop>
   <tabstop>tableDevedores</tabstop>
-  <tabstop>btnInserirCredito</tabstop>
  </tabstops>
  <resources/>
  <connections>
