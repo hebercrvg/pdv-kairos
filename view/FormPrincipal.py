@@ -33,7 +33,7 @@ class Ui_FormPrincipal(object):
         msg = QMessageBox(None)
         msg.setWindowTitle("DESCULPE")
         msg.setIcon(QMessageBox.Information)
-        msg.setText("Desculpe, esta função está em desenvolvimento.")
+        msg.setText("Desculpe, esta função está em desenvolvimento!")
         msg.exec_()
 
 
