@@ -212,7 +212,6 @@ class VendaCTR:
         result = vendaDAO.pesquisar_devedor_por_divida(nome)
         return result
 
-
     def pesquisar_todos_devedores():
         vendaDAO = VendaDAO
         result = vendaDAO.pesquisar_todos_devedores()
