@@ -202,6 +202,17 @@ class VendaCTR:
                     msg.setIcon(QMessageBox.Critical)
                     msg.exec_()
 
+    def pesquisar_todos_devedores_por_divida():
+        vendaDAO = VendaDAO
+        result = vendaDAO.pesquisar_todos_devedores_por_divida()
+        return result
+
+    def pesquisar_devedor_por_divida(nome):
+        vendaDAO = VendaDAO
+        result = vendaDAO.pesquisar_devedor_por_divida(nome)
+        return result
+
+
     def pesquisar_todos_devedores():
         vendaDAO = VendaDAO
         result = vendaDAO.pesquisar_todos_devedores()

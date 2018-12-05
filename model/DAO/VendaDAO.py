@@ -19,14 +19,14 @@ class VendaDAO:
 
     def pesquisar_todos_devedores_por_divida():
         conn = ConexaoBanco.get_conexao()
-        query = ("""SELECT V.CODVENDA, C.CODCLI, C.NOME,
-                 SUM(V.VALORVENDA-V.VALORPAGO) AS 'DIVIDA'
+        query = ("""SELECT V.CODVENDA, C.CODCLI, C.NOME, strftime('%d/%m/%Y', V.dtvenda) AS 'DATA VENDA',
+                 V.VALORVENDA, V.VALORPAGO,
+                 V.VALORVENDA-V.VALORPAGO AS 'DIVIDA VENDA'
                  FROM CLIENTE C
                  INNER JOIN VENDA V
                  ON C.CODCLI = V.CODCLI
                  WHERE V.VALORPAGO < V.VALORVENDA 
-                 GROUP BY V.CODCLI
-                 ORDER BY C.NOME ASC""")
+                 ORDER BY C.NOME ASC """)
         result = conn.execute(query)
         return result
 

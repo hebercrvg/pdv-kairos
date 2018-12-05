@@ -3,7 +3,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from view.FormClientes import Ui_FormClientes
 from view.FormProdutos import Ui_FormProdutos
 from view.FormVenda import Ui_FormVenda
-from view.FormDevedores import Ui_FormDevedores
+from view.FormContasAReceber import Ui_FormContasReceber
 
 
 class Ui_FormPrincipal(object):
@@ -24,9 +24,9 @@ class Ui_FormPrincipal(object):
         self.ui = Ui_FormVenda()
         self.ui.setupUi(self.formvenda)
         self.formvenda.show()
-    def click_btn_devedores(self):
+    def click_btn_contasreceber(self):
         self.devedores = QMainWindow()
-        self.ui = Ui_FormDevedores()
+        self.ui = Ui_FormContasReceber()
         self.ui.setupUi(self.devedores)
         self.devedores.show()
     def click_btn_relatorios(self):
@@ -164,7 +164,7 @@ class Ui_FormPrincipal(object):
         self.btnCadastrarCliente.clicked.connect(self.click_btn_clientes)
         self.btnCadastrarProduto.clicked.connect(self.click_btn_produtos)
         self.btnVenda.clicked.connect(self.click_btn_venda)
-        self.btnContasAReceber.clicked.connect(self.click_btn_devedores)
+        self.btnContasAReceber.clicked.connect(self.click_btn_contasreceber)
         self.btnRelatorios.clicked.connect(self.click_btn_relatorios)
 
     def retranslateUi(self, FormPrincipal):
