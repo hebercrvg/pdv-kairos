@@ -1,6 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QAbstractItemView
 from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QFont
 from view.FormCadastrarProduto import Ui_FormCadastrarProduto
 from view.FormAlterarProduto import Ui_FormAlterarProduto
 from controller.ProdutoCTR import ProdutoCTR
@@ -14,24 +15,70 @@ class Ui_FormProdutos(object):
         self.formcadastrarproduto.show()
 
     def click_btn_alterar_produto(self):
-        linha = self.tableProduto.currentItem().row()
-        codprod = self.tableProduto.item(linha, 0).text()
-        descricao = self.tableProduto.item(linha, 1).text()
-        tipo = self.tableProduto.item(linha, 2).text()
-        preco = float(self.tableProduto.item(linha, 3).text())
+        try:
+            linha = self.tableProduto.currentItem().row()
+            codprod = self.tableProduto.item(linha, 0).text()
+            descricao = self.tableProduto.item(linha, 1).text()
+            tipo = self.tableProduto.item(linha, 2).text()
+            preco = float(self.tableProduto.item(linha, 3).text())
+            self.formalterarproduto = QMainWindow()
+            self.ui = Ui_FormAlterarProduto()
+            self.ui.setupUi(self.formalterarproduto)
+            self.formalterarproduto.show()
+            self.ui.preencher_campos(codprod, descricao, tipo, preco)
+        except:
+            msg = ("Selecione um produto para alterar.")
+            dlg = QMessageBox(None)
+            dlg.setWindowTitle("Erro")
+            dlg.setIcon(QMessageBox.Critical)
+            font = QFont()
+            font.setFamily("Arial")
+            font.setPointSize(15)
+            dlg.setFont(font)
+            dlg.setWindowIcon(QtGui.QIcon("error.png"))
+            dlg.setText(msg)
+            dlg.exec_()
 
-        self.formalterarproduto = QMainWindow()
-        self.ui = Ui_FormAlterarProduto()
-        self.ui.setupUi(self.formalterarproduto)
-        self.formalterarproduto.show()
-        self.ui.preencher_campos(codprod, descricao, tipo, preco)
+
 
     def click_btn_excluir_produto(self):
-        linha = self.tableProduto.currentItem().row()
-        Codprod = (int(self.tableProduto.item(linha, 0).text()))
-        print(Codprod)
-        ProdutoCTR.Excluir_Produto(Codprod)
-        self.click_btn_pesquisar_produto()
+        try:
+            linha = self.tableProduto.currentItem().row()
+            Codprod = (int(self.tableProduto.item(linha, 0).text()))
+            descricao = self.tableProduto.item(linha, 1).text()
+            msg = QMessageBox(None)
+            msg.setWindowTitle("Confirmação")
+            msg.setWindowIcon(QtGui.QIcon("question.png"))
+            msg.setIcon(QMessageBox.Question)
+            text = ("Deseja excluir o produto: \n"
+                        "{} ?".format(descricao))
+            msg.setText(text)
+            msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+            op = msg.exec_()
+            if (op == QMessageBox.Ok):
+                ProdutoCTR.Excluir_Produto(Codprod)
+            elif (op == QMessageBox.Cancel):
+                msg = QMessageBox(None)
+                msg.setWindowTitle("Cancelado")
+                msg.setWindowIcon(QtGui.QIcon("error.png"))
+                msg.setIcon(QMessageBox.Critical)
+                msg.setText("Exclusão cancelada.")
+                msg.exec_()
+            self.click_btn_pesquisar_produto()
+
+
+        except:
+            msg = ("Selecione um produto para excluir.")
+            dlg = QMessageBox(None)
+            dlg.setWindowTitle("Erro")
+            dlg.setIcon(QMessageBox.Critical)
+            font = QFont()
+            font.setFamily("Arial")
+            font.setPointSize(15)
+            dlg.setFont(font)
+            dlg.setWindowIcon(QtGui.QIcon("error.png"))
+            dlg.setText(msg)
+            dlg.exec_()
 
     def click_btn_pesquisar_produto(self):
         aux = self.editPesquisaProduto.text()
