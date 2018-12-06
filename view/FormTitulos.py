@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QMainWindow, QApplication, QAbstractItemView, QTableWidgetItem
+from PyQt5.QtWidgets import QMainWindow, QApplication, QAbstractItemView, QTableWidgetItem, QMessageBox
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import Qt
 from controller.VendaCTR import VendaCTR
@@ -8,17 +8,25 @@ from model.DAO.ClienteDAO import ClienteDAO
 class Ui_FormTitulos(object):
 
     def click_btn_incluir_credito(self):
-        linha = self.tableDevedores.currentRow()
-        codvenda = self.tableDevedores.item(linha, 0).text()
-        cliente = self.tableDevedores.item(linha, 2).text()
-        valorvenda = self.tableDevedores.item(linha, 4).text()
-        valorpago = self.tableDevedores.item(linha, 5).text()
+        try:
+            linha = self.tableDevedores.currentRow()
+            codvenda = self.tableDevedores.item(linha, 0).text()
+            cliente = self.tableDevedores.item(linha, 2).text()
+            valorvenda = self.tableDevedores.item(linha, 4).text()
+            valorpago = self.tableDevedores.item(linha, 5).text()
+            self.formlancarcredito = QMainWindow()
+            self.ui = Ui_FormLancarCredito()
+            self.ui.setupUi(self.formlancarcredito)
+            self.formlancarcredito.show()
+            self.ui.preencher_campos(codvenda, valorvenda, valorpago, cliente)
+        except:
+            msg = QMessageBox(None)
+            msg.setWindowTitle("Erro.")
+            msg.setIcon(QMessageBox.Critical)
+            msg.setWindowIcon(QtGui.QIcon("error.png"))
+            msg.setText("Selecione uma venda para lançar o crédito/pagamento.")
+            msg.exec_()
 
-        self.formlancarcredito = QMainWindow()
-        self.ui = Ui_FormLancarCredito()
-        self.ui.setupUi(self.formlancarcredito)
-        self.formlancarcredito.show()
-        self.ui.preencher_campos(codvenda, valorvenda, valorpago, cliente)
 
 
     def click_btn_pesquisar_cliente(self):
