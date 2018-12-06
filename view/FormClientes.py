@@ -82,6 +82,7 @@ class Ui_FormClientes(object):
 
 
     def setupUi(self, FormClientes):
+
         FormClientes.setObjectName("FormClientes")
         FormClientes.resize(661, 471)
         icon = QtGui.QIcon()
