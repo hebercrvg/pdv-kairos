@@ -180,7 +180,7 @@ class Ui_FormPrincipal(object):
         self.btnContasAReceber.setText(_translate("FormPrincipal", "Contas a Receber"))
         self.btnRelatorios.setToolTip(_translate("FormPrincipal", "<html><head/><body><p>Aqui você pode listar os clientes cadastrados.</p></body></html>"))
         self.btnRelatorios.setText(_translate("FormPrincipal", "Relatórios"))
-        self.label.setText(_translate("FormPrincipal", "Versão: BETA1.0"))
+        self.label.setText(_translate("FormPrincipal", "Versão: BETA1.1"))
 
 if __name__ == '__main__':
     import sys
