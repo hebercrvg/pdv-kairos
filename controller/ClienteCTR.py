@@ -7,69 +7,55 @@ from PyQt5.QtGui import QFont, QIcon
 class ClienteCTR:
 
     def alterar_cliente(codcli, nome, telefone):
+        clienteDTO = ClienteDTO
+        clienteDAO = ClienteDAO
+        clienteDTO.nome = nome
+        clienteDTO.telefone = telefone
+        Codcli = codcli
+        aux = 0
 
-
-        try:
-            clienteDTO = ClienteDTO
-            clienteDAO = ClienteDAO
-            clienteDTO.nome = nome
-            clienteDTO.telefone = telefone
-            Codcli = codcli
-            aux = 0
-
-            if (clienteDTO.nome == ''):
-                aux += 1
-                msg = ("Nome inválido. \n"
-                       "{}".format(clienteDTO.nome))
-                dlg = QMessageBox(None)
-                dlg.setWindowTitle("Erro")
-                font = QFont()
-                font.setFamily("Arial")
-                font.setPointSize(15)
-                dlg.setFont(font)
-                dlg.setIcon(QMessageBox.Critical)
-                dlg.setWindowIcon(QtGui.QIcon("error.png"))
-                dlg.setText(msg)
-                dlg.exec_()
-
-            if (clienteDTO.telefone == '') or ((len(clienteDTO.telefone)) < 13):
-                aux += 1
-                msg = ("Telefone inválido. \n"
-                       "Por favor informe um telefone válido.")
-                dlg = QMessageBox(None)
-                dlg.setWindowTitle("Erro")
-                dlg.setIcon(QMessageBox.Critical)
-                font = QFont()
-                font.setFamily("Arial")
-                font.setPointSize(15)
-                dlg.setFont(font)
-                dlg.setWindowIcon(QtGui.QIcon("error.png"))
-                dlg.setText(msg)
-                dlg.exec_()
-
-            if (aux==0):
-                clienteDAO.alterar_cliente(Codcli, clienteDTO.nome, clienteDTO.telefone)
-                dlg = QMessageBox(None)
-                dlg.setWindowTitle("Sucesso")
-                dlg.setIcon(QMessageBox.Information)
-                font = QFont()
-                font.setFamily("Arial")
-                font.setPointSize(15)
-                dlg.setFont(font)
-                dlg.setWindowIcon(QtGui.QIcon("greencheck.png"))
-                dlg.setText("Cliente alterado com sucesso.")
-                dlg.setStandardButtons(QMessageBox.Ok)
-                dlg.exec_()
-        except:
+        if (clienteDTO.nome == ''):
+            aux += 1
+            msg = ("Nome inválido. \n"
+                   "{}".format(clienteDTO.nome))
             dlg = QMessageBox(None)
-            dlg.setWindowTitle("Exclusão")
-            dlg.setIcon(QMessageBox.Information)
-            dlg.setWindowIcon(QIcon("greencheck.png"))
+            dlg.setWindowTitle("Erro")
             font = QFont()
             font.setFamily("Arial")
             font.setPointSize(15)
             dlg.setFont(font)
-            dlg.setText("Cliente excluído com sucesso.")
+            dlg.setIcon(QMessageBox.Critical)
+            dlg.setWindowIcon(QtGui.QIcon("error.png"))
+            dlg.setText(msg)
+            dlg.exec_()
+
+        if (clienteDTO.telefone == '') or ((len(clienteDTO.telefone)) < 13):
+            aux += 1
+            msg = ("Telefone inválido. \n"
+                   "Por favor informe um telefone válido.")
+            dlg = QMessageBox(None)
+            dlg.setWindowTitle("Erro")
+            dlg.setIcon(QMessageBox.Critical)
+            font = QFont()
+            font.setFamily("Arial")
+            font.setPointSize(15)
+            dlg.setFont(font)
+            dlg.setWindowIcon(QtGui.QIcon("error.png"))
+            dlg.setText(msg)
+            dlg.exec_()
+
+        if (aux==0):
+            clienteDAO.alterar_cliente(Codcli, clienteDTO.nome, clienteDTO.telefone)
+            dlg = QMessageBox(None)
+            dlg.setWindowTitle("Sucesso")
+            dlg.setIcon(QMessageBox.Information)
+            font = QFont()
+            font.setFamily("Arial")
+            font.setPointSize(15)
+            dlg.setFont(font)
+            dlg.setWindowIcon(QtGui.QIcon("greencheck.png"))
+            dlg.setText("Cliente alterado com sucesso.")
+            dlg.setStandardButtons(QMessageBox.Ok)
             dlg.exec_()
 
 

@@ -1,5 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QAbstractItemView
+from PyQt5.QtGui import QFont
+from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QAbstractItemView, QMessageBox
 from view.FormCadastrarCliente import Ui_FormCadastrarCliente
 from view.FormAlterarCliente import Ui_FormAlterarCliente
 from PyQt5.QtCore import Qt
@@ -15,23 +16,48 @@ class Ui_FormClientes(object):
         self.formcadastrarcliente.show()
 
     def click_btn_excluir_cliente(self):
-        linha = self.tableCliente.currentItem().row()
-        codcli = (int(self.tableCliente.item(linha, 0).text()))
-        nome = self.tableCliente.item(linha, 1).text()
-        ClienteCTR.Excluir_Cliente(codcli, nome)
+        try:
+            linha = self.tableCliente.currentItem().row()
+            codcli = (int(self.tableCliente.item(linha, 0).text()))
+            nome = self.tableCliente.item(linha, 1).text()
+            ClienteCTR.Excluir_Cliente(codcli, nome)
+        except:
+            msg = ("Selecione um cliente para excluir.")
+            dlg = QMessageBox(None)
+            dlg.setWindowTitle("Erro")
+            dlg.setIcon(QMessageBox.Critical)
+            font = QFont()
+            font.setFamily("Arial")
+            font.setPointSize(15)
+            dlg.setFont(font)
+            dlg.setWindowIcon(QtGui.QIcon("error.png"))
+            dlg.setText(msg)
+            dlg.exec_()
 
 
     def click_btn_alterar_cliente(self):
-
-        linha = self.tableCliente.currentItem().row()
-        codcli = self.tableCliente.item(linha, 0).text()
-        nome = self.tableCliente.item(linha, 1).text()
-        telefone = self.tableCliente.item(linha, 2).text()
-        self.formalterarcliente = QMainWindow()
-        self.ui = Ui_FormAlterarCliente()
-        self.ui.setupUi(self.formalterarcliente)
-        self.formalterarcliente.show()
-        self.ui.preencher_campos(codcli, nome, telefone)
+        try:
+            linha = self.tableCliente.currentItem().row()
+            codcli = self.tableCliente.item(linha, 0).text()
+            nome = self.tableCliente.item(linha, 1).text()
+            telefone = self.tableCliente.item(linha, 2).text()
+            self.formalterarcliente = QMainWindow()
+            self.ui = Ui_FormAlterarCliente()
+            self.ui.setupUi(self.formalterarcliente)
+            self.formalterarcliente.show()
+            self.ui.preencher_campos(codcli, nome, telefone)
+        except:
+            msg = ("Selecione um cliente para alterar.")
+            dlg = QMessageBox(None)
+            dlg.setWindowTitle("Erro")
+            dlg.setIcon(QMessageBox.Critical)
+            font = QFont()
+            font.setFamily("Arial")
+            font.setPointSize(15)
+            dlg.setFont(font)
+            dlg.setWindowIcon(QtGui.QIcon("error.png"))
+            dlg.setText(msg)
+            dlg.exec_()
 
     def click_btn_pesquisar(self):
 
