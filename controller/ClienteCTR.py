@@ -110,6 +110,7 @@ class ClienteCTR:
 
         clienteDTO.nome = nome
         clienteDTO.telefone = telefone
+
         if clienteDTO.nome == '':
             aux += 1
             msg = ("Nome inválido. \n "
