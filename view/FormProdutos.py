@@ -7,7 +7,6 @@ from view.FormAlterarProduto import Ui_FormAlterarProduto
 from controller.ProdutoCTR import ProdutoCTR
 
 class Ui_FormProdutos(object):
-
     def click_btn_cadastrar_produto(self):
         self.formcadastrarproduto = QMainWindow()
         self.ui = Ui_FormCadastrarProduto()
