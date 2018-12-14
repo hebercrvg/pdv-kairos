@@ -1,17 +1,36 @@
-from PyQt5.QtWidgets import QDialog, QApplication, QMainWindow
+from PyQt5.QtWidgets import QDialog, QApplication, QMainWindow, QMessageBox
 from PyQt5 import QtCore, QtGui, QtWidgets
 from view.FormPrincipal import Ui_FormPrincipal
-
+from controller.UsuarioCTR import UsuarioCTR
 
 class Ui_FormLogin(object):
 
     def click_btn_login(self):
-        self.formprincipal = QMainWindow()
-        self.ui = Ui_FormPrincipal()
-        self.ui.setupUi(self.formprincipal)
-        self.formprincipal.show()
+        usuario = self.editUsuario.text()
+        senha = self.editSenha.text()
+        aux = UsuarioCTR.autentica_usuario(usuario, senha)
+        if (aux == True):
+            self.formprincipal = QMainWindow()
+            self.ui = Ui_FormPrincipal()
+            self.ui.setupUi(self.formprincipal)
+            self.formprincipal.show()
+            FormLogin.close()
 
-    def setupUi(self, FormLogin):
+
+        elif(aux == False):
+            msg = QMessageBox(None)
+            msg.setWindowTitle("Erro")
+            msg.setWindowIcon(QtGui.QIcon("key.png"))
+            msg.setIcon(QMessageBox.Critical)
+            msg.setText("Senha incorreta.")
+            msg.exec_()
+            self.editUsuario.clear()
+            self.editSenha.clear()
+
+
+    def setupUi(self, formLogin):
+        global FormLogin
+        FormLogin = formLogin
         FormLogin.setObjectName("FormLogin")
         FormLogin.resize(432, 148)
         icon = QtGui.QIcon()
@@ -68,7 +87,7 @@ class Ui_FormLogin(object):
         self.verticalLayout.addWidget(self.editSenha)
 
         self.pushButton.clicked.connect(self.click_btn_login)
-        self.pushButton.clicked.connect(FormLogin.accept)
+
         self.pushButton_2.clicked.connect(FormLogin.reject)
 
         self.retranslateUi(FormLogin)

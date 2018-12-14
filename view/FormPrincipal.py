@@ -170,15 +170,15 @@ class Ui_FormPrincipal(object):
     def retranslateUi(self, FormPrincipal):
         _translate = QtCore.QCoreApplication.translate
         FormPrincipal.setWindowTitle(_translate("FormPrincipal", "Sistema de Vendas - KAIRÓS"))
-        self.btnCadastrarCliente.setToolTip(_translate("FormPrincipal", "<html><head/><body><p>Aqui você pode cadastrar clientes.</p></body></html>"))
+        self.btnCadastrarCliente.setToolTip(_translate("FormPrincipal", "<html><head/><body><p>Aqui você pode cadastrar e alterar clientes.</p></body></html>"))
         self.btnCadastrarCliente.setText(_translate("FormPrincipal", "Clientes"))
-        self.btnCadastrarProduto.setToolTip(_translate("FormPrincipal", "<html><head/><body><p>Aqui você pode listar os clientes cadastrados.</p></body></html>"))
+        self.btnCadastrarProduto.setToolTip(_translate("FormPrincipal", "<html><head/><body><p>Aqui você pode cadastrar e alterar produtos..</p></body></html>"))
         self.btnCadastrarProduto.setText(_translate("FormPrincipal", "Produtos"))
-        self.btnVenda.setToolTip(_translate("FormPrincipal", "<html><head/><body><p>Aqui você pode listar os clientes cadastrados.</p></body></html>"))
+        self.btnVenda.setToolTip(_translate("FormPrincipal", "<html><head/><body><p>Aqui você pode realizar uma venda.</p></body></html>"))
         self.btnVenda.setText(_translate("FormPrincipal", "Vendas"))
-        self.btnContasAReceber.setToolTip(_translate("FormPrincipal", "<html><head/><body><p>Aqui você pode listar os clientes cadastrados.</p></body></html>"))
+        self.btnContasAReceber.setToolTip(_translate("FormPrincipal", "<html><head/><body><p>Aqui você pode veficar assuntos financeiros.</p></body></html>"))
         self.btnContasAReceber.setText(_translate("FormPrincipal", "Contas a Receber"))
-        self.btnRelatorios.setToolTip(_translate("FormPrincipal", "<html><head/><body><p>Aqui você pode listar os clientes cadastrados.</p></body></html>"))
+        self.btnRelatorios.setToolTip(_translate("FormPrincipal", "<html><head/><body><p>Aqui você pode gerar alguns relatórios.</p></body></html>"))
         self.btnRelatorios.setText(_translate("FormPrincipal", "Relatórios"))
         self.label.setText(_translate("FormPrincipal", "Versão: BETA1.1"))
 
