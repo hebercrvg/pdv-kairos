@@ -20,7 +20,7 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(13, 42, 172);</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="btnEntrar">
    <property name="geometry">
     <rect>
      <x>350</x>
@@ -36,7 +36,7 @@
     <string>Entrar</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="btnSair">
    <property name="geometry">
     <rect>
      <x>350</x>
@@ -52,7 +52,7 @@
     <string>Sair</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QLabel" name="labelKey">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -68,7 +68,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>120</x>
@@ -79,7 +79,7 @@
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QLabel" name="label">
+     <widget class="QLabel" name="labelUsuario">
       <property name="font">
        <font>
         <pointsize>10</pointsize>
@@ -106,7 +106,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="label_2">
+     <widget class="QLabel" name="labelSenha">
       <property name="font">
        <font>
         <pointsize>10</pointsize>
@@ -143,14 +143,14 @@
  </resources>
  <connections>
   <connection>
-   <sender>pushButton</sender>
+   <sender>btnSair</sender>
    <signal>clicked()</signal>
    <receiver>FormLogin</receiver>
-   <slot>accept()</slot>
+   <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>387</x>
-     <y>71</y>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
      <x>215</x>
