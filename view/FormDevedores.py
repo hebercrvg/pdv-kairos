@@ -1,12 +1,17 @@
-from PyQt5.QtWidgets import QMainWindow, QApplication, QAbstractItemView, QTableWidgetItem
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMainWindow, QApplication, QAbstractItemView, QTableWidgetItem, QDialog
 from PyQt5.QtCore import Qt
 from controller.VendaCTR import VendaCTR
-from view.FormLancarCredito import Ui_FormLancarCredito
-from model.DAO.ClienteDAO import ClienteDAO
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.Qt import QPrintDialog, QPrinter, QPainter
 
 class Ui_FormDevedores(object):
+
+    def teste_print(self):
+        printer = QPrinter
+        printerdialog = QPrintDialog(printer)
+        if (printerdialog.exec() == QDialog.Accepted):
+            painter = QPainter(printer)
+            self.tableDevedores.render(painter)
 
     def click_btn_pesquisar_cliente(self):
         nome = self.editPesquisaCliente.text()
@@ -139,7 +144,7 @@ class Ui_FormDevedores(object):
         self.retranslateUi(FormDevedores)
         self.btnLimpar.clicked.connect(self.editPesquisaCliente.clear)
         self.btnPesquisarCliente.clicked.connect(self.click_btn_pesquisar_cliente)
-
+        self.btnExportar.clicked.connect(self.teste_print)
 
         QtCore.QMetaObject.connectSlotsByName(FormDevedores)
         FormDevedores.setTabOrder(self.editPesquisaCliente, self.btnPesquisarCliente)

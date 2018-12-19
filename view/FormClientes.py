@@ -1,5 +1,4 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QAbstractItemView, QMessageBox
 from view.FormCadastrarCliente import Ui_FormCadastrarCliente
 from view.FormAlterarCliente import Ui_FormAlterarCliente

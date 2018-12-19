@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FormMenuPrincipal</class>
+ <widget class="QMainWindow" name="FormMenuPrincipal">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1360</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>PDV - Kairós v1.0</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../img/PGKairos1.png</normaloff>../../img/PGKairos1.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/fa/fundo.png);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1360</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QMenu" name="menuCadastros">
+    <property name="title">
+     <string>Cadastros</string>
+    </property>
+    <addaction name="actionClientes"/>
+    <addaction name="actionVendas"/>
+   </widget>
+   <widget class="QMenu" name="menuVendas">
+    <property name="title">
+     <string>Vendas</string>
+    </property>
+    <addaction name="actionIniciarVenda"/>
+   </widget>
+   <widget class="QMenu" name="menuFinanceiro">
+    <property name="title">
+     <string>Financeiro</string>
+    </property>
+    <addaction name="actionContasAReceber"/>
+    <addaction name="actionLancarCredito"/>
+   </widget>
+   <widget class="QMenu" name="menuAdministracao">
+    <property name="title">
+     <string>Administração</string>
+    </property>
+    <addaction name="actionUsuarios"/>
+   </widget>
+   <addaction name="menuCadastros"/>
+   <addaction name="menuVendas"/>
+   <addaction name="menuFinanceiro"/>
+   <addaction name="menuAdministracao"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+  <action name="actionClientes">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../img/cadastrar usuario.png</normaloff>../../img/cadastrar usuario.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clientes</string>
+   </property>
+  </action>
+  <action name="actionVendas">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../img/cadastrar produtos 2.png</normaloff>../../img/cadastrar produtos 2.png</iconset>
+   </property>
+   <property name="text">
+    <string>Produtos</string>
+   </property>
+  </action>
+  <action name="actionUsuarios">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../img/cliente.png</normaloff>../../img/cliente.png</iconset>
+   </property>
+   <property name="text">
+    <string>Usuários</string>
+   </property>
+  </action>
+  <action name="actionIniciarVenda">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../img/loja.png</normaloff>../../img/loja.png</iconset>
+   </property>
+   <property name="text">
+    <string>Iniciar Venda</string>
+   </property>
+  </action>
+  <action name="actionContasAReceber">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../img/contas a receber.png</normaloff>../../img/contas a receber.png</iconset>
+   </property>
+   <property name="text">
+    <string>Contas a Receber</string>
+   </property>
+  </action>
+  <action name="actionLan_ar_Cr_dto_ao_Cliente">
+   <property name="text">
+    <string>Lançar Crédto ao Cliente</string>
+   </property>
+  </action>
+  <action name="actionLancarCredito">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../img/devedor.png</normaloff>../../img/devedor.png</iconset>
+   </property>
+   <property name="text">
+    <string>Lançar Crédito ao Cliente</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../../img/backgroud.qrc"/>
+ </resources>
+ <connections/>
+</ui>
