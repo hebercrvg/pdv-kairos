@@ -1,0 +1,103 @@
+from PyQt5.QtWidgets import QDialog, QApplication, QMainWindow, QMessageBox
+from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.Qt import QIcon
+from controller.UsuarioCTR import UsuarioCTR
+
+class Ui_FormCadastrarUsuario(object):
+
+    def click_btn_cadastrar(self):
+        usuario = self.editUsuario.text()
+        senha  = self.editSenha.text()
+        if ((usuario!= '') and (senha != '')):
+            UsuarioCTR.inserir_usuario(usuario, senha)
+            self.editUsuario.clear()
+            self.editSenha.clear()
+        else:
+            dlg = QMessageBox(None)
+            dlg.setWindowIcon(QIcon("error.png"))
+            dlg.setIcon(QMessageBox.Information)
+            dlg.setWindowTitle("Cancelado")
+            dlg.setText("Usuário ou senha inválidos. Revise usuário e senha digitados.")
+            dlg.exec_()
+            self.editSenha.clear()
+
+    def setupUi(self, FormCadastrarUsuario):
+        FormCadastrarUsuario.setObjectName("FormCadastrarUsuario")
+        FormCadastrarUsuario.resize(489, 242)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("../../img/cliente.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        FormCadastrarUsuario.setWindowIcon(icon)
+        self.centralwidget = QtWidgets.QWidget(FormCadastrarUsuario)
+        self.centralwidget.setObjectName("centralwidget")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(160, 20, 151, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.label.setFont(font)
+        self.label.setObjectName("label")
+        self.layoutWidget = QtWidgets.QWidget(self.centralwidget)
+        self.layoutWidget.setGeometry(QtCore.QRect(150, 180, 168, 35))
+        self.layoutWidget.setObjectName("layoutWidget")
+        self.formLayout = QtWidgets.QFormLayout(self.layoutWidget)
+        self.formLayout.setContentsMargins(0, 0, 0, 0)
+        self.formLayout.setObjectName("formLayout")
+        self.btnCadastrar = QtWidgets.QPushButton(self.layoutWidget)
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("../../img/salvar usuario.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.btnCadastrar.setIcon(icon1)
+        self.btnCadastrar.setIconSize(QtCore.QSize(25, 25))
+        self.btnCadastrar.setObjectName("btnCadastrar")
+        self.formLayout.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.btnCadastrar)
+        self.btnLimpar = QtWidgets.QPushButton(self.layoutWidget)
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap("../../img/borracha.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.btnLimpar.setIcon(icon2)
+        self.btnLimpar.setIconSize(QtCore.QSize(25, 25))
+        self.btnLimpar.setObjectName("btnLimpar")
+        self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.btnLimpar)
+        self.widget = QtWidgets.QWidget(self.centralwidget)
+        self.widget.setGeometry(QtCore.QRect(110, 70, 231, 86))
+        self.widget.setObjectName("widget")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.widget)
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.labelUsuario = QtWidgets.QLabel(self.widget)
+        self.labelUsuario.setObjectName("labelUsuario")
+        self.verticalLayout.addWidget(self.labelUsuario)
+        self.editUsuario = QtWidgets.QLineEdit(self.widget)
+        self.editUsuario.setInputMask("")
+        self.editUsuario.setEchoMode(QtWidgets.QLineEdit.Normal)
+        self.editUsuario.setObjectName("editUsuario")
+        self.verticalLayout.addWidget(self.editUsuario)
+        self.labelSenha = QtWidgets.QLabel(self.widget)
+        self.labelSenha.setObjectName("labelSenha")
+        self.verticalLayout.addWidget(self.labelSenha)
+        self.editSenha = QtWidgets.QLineEdit(self.widget)
+        self.editSenha.setInputMask("")
+        self.editSenha.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.editSenha.setObjectName("editSenha")
+        self.verticalLayout.addWidget(self.editSenha)
+        FormCadastrarUsuario.setCentralWidget(self.centralwidget)
+        self.statusbar = QtWidgets.QStatusBar(FormCadastrarUsuario)
+        self.statusbar.setObjectName("statusbar")
+        FormCadastrarUsuario.setStatusBar(self.statusbar)
+
+        self.retranslateUi(FormCadastrarUsuario)
+        self.btnLimpar.clicked.connect(self.editUsuario.clear)
+        self.btnCadastrar.clicked.connect(self.click_btn_cadastrar)
+
+        QtCore.QMetaObject.connectSlotsByName(FormCadastrarUsuario)
+        FormCadastrarUsuario.setTabOrder(self.editUsuario, self.editSenha)
+        FormCadastrarUsuario.setTabOrder(self.editSenha, self.btnCadastrar)
+        FormCadastrarUsuario.setTabOrder(self.btnCadastrar, self.btnLimpar)
+
+
+    def retranslateUi(self, FormCadastrarUsuario):
+        _translate = QtCore.QCoreApplication.translate
+        FormCadastrarUsuario.setWindowTitle(_translate("FormCadastrarUsuario", "Cadastrar Usuário"))
+        self.label.setText(_translate("FormCadastrarUsuario", "Cadastrar Usuário"))
+        self.btnCadastrar.setText(_translate("FormCadastrarUsuario", "Cadastrar"))
+        self.btnLimpar.setText(_translate("FormCadastrarUsuario", "Limpar"))
+        self.labelUsuario.setText(_translate("FormCadastrarUsuario", "Usuário:"))
+        self.labelSenha.setText(_translate("FormCadastrarUsuario", "Senha:"))
+

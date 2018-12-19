@@ -5,9 +5,16 @@ from view.FormProdutos import Ui_FormProdutos
 from view.FormVenda import Ui_FormVenda
 from view.FormDevedores import Ui_FormDevedores
 from view.FormTitulos import Ui_FormTitulos
+from view.FormUsuarios import Ui_FormUsuarios
 
 
 class Ui_FormMenuPrincipal(object):
+
+    def click_btn_usuarios(self):
+        self.usuarios = QMainWindow()
+        self.ui = Ui_FormUsuarios()
+        self.ui.setupUi(self.usuarios)
+        self.usuarios.show()
 
     def click_btn_clientes(self):
         self.formclientes = QMainWindow()
@@ -113,7 +120,7 @@ class Ui_FormMenuPrincipal(object):
         self.actionIniciarVenda.triggered.connect(self.click_btn_venda)
         self.actionContasAReceber.triggered.connect(self.click_btn_contasreceber)
         self.actionLancarCredito.triggered.connect(self.click_btn_lancarcredito)
-
+        self.actionUsuarios.triggered.connect(self.click_btn_usuarios)
         self.retranslateUi(FormMenuPrincipal)
         QtCore.QMetaObject.connectSlotsByName(FormMenuPrincipal)
 

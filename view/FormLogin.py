@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QDialog, QApplication, QMainWindow, QMessageBox
 from PyQt5 import QtCore, QtGui, QtWidgets
 from view.FormPrincipal import Ui_FormPrincipal
+from view.FormMenuPrincipal import Ui_FormMenuPrincipal
 from controller.UsuarioCTR import UsuarioCTR
 
 class Ui_FormLogin(object):
@@ -10,9 +11,9 @@ class Ui_FormLogin(object):
         aux = UsuarioCTR.autentica_usuario(usuario, senha)
         if (aux == True):
             self.formprincipal = QMainWindow()
-            self.ui = Ui_FormPrincipal()
+            self.ui = Ui_FormMenuPrincipal()
             self.ui.setupUi(self.formprincipal)
-            self.formprincipal.show()
+            self.formprincipal.showMaximized()
             FormLogin.close()
 
 

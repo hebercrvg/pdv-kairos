@@ -1,8 +1,71 @@
-from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox
+from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox, QAbstractItemView, QTableWidgetItem
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.Qt import Qt
+from PyQt5.QtGui import QIcon
 from controller.UsuarioCTR import UsuarioCTR
+from model.DAO.UsuarioDAO import UsuarioDAO
+from view.FormAlterarUsuarios import Ui_FormAlterarUsuario
+from view.FormCadastrarUsuario import Ui_FormCadastrarUsuario
 
 class Ui_FormUsuarios(object):
+
+    def click_btn_cadastrar_usuario(self):
+        self.cadastrarusuario = QMainWindow()
+        self.ui = Ui_FormCadastrarUsuario()
+        self.ui.setupUi(self.cadastrarusuario)
+        self.cadastrarusuario.show()
+
+    def click_btn_alterar_usuario(self):
+        try:
+            linha = self.tableCliente.currentItem().row()
+            codusuario = int(self.tableCliente.item(linha, 0).text())
+            usuario = self.tableCliente.item(linha, 1).text()
+            self.alterarcliente = QMainWindow()
+            self.ui = Ui_FormAlterarUsuario()
+            self.ui.setupUi(self.alterarcliente)
+            self.alterarcliente.show()
+            self.ui.preencher_campos(codusuario, usuario)
+        except:
+            dlg = QMessageBox(None)
+            dlg.setWindowIcon(QIcon("error.png"))
+            dlg.setIcon(QMessageBox.Information)
+            dlg.setWindowTitle("Cancelado")
+            dlg.setText("Selecione um usuário para alterar!")
+            dlg.exec_()
+
+    def click_btn_excluir_usuario(self):
+        try:
+            linha = self.tableCliente.currentItem().row()
+            codusuario = int(self.tableCliente.item(linha, 0).text())
+            usuario = self.tableCliente.item(linha, 1).text()
+            UsuarioCTR.excluir_usuario(codusuario, usuario)
+        except:
+            dlg = QMessageBox(None)
+            dlg.setWindowIcon(QIcon("error.png"))
+            dlg.setIcon(QMessageBox.Information)
+            dlg.setWindowTitle("Cancelado")
+            dlg.setText("Selecione um usuário para excluir!")
+            dlg.exec_()
+
+
+    def click_btn_pesquisar(self):
+        item = QTableWidgetItem
+        aux = self.editPesquisaUsuario.text()
+        if (aux == ''):
+            result = UsuarioCTR.pesquisa_todos_usuarios()
+            self.tableCliente.setRowCount(0)
+            for num_linha, linha_conteudo in enumerate(result):
+                self.tableCliente.insertRow(num_linha)
+                for num_coluna, coluna_conteudo in enumerate(linha_conteudo):
+                    self.tableCliente.setItem(num_linha, num_coluna, QtWidgets.QTableWidgetItem(str(coluna_conteudo)))
+
+        elif (aux != ''):
+            result = UsuarioCTR.pesquisa_usuario(aux)
+            self.tableCliente.setRowCount(0)
+            for num_linha, linha_conteudo in enumerate(result):
+                self.tableCliente.insertRow(num_linha)
+                for num_coluna, coluna_conteudo in enumerate(linha_conteudo):
+                    self.tableCliente.setItem(num_linha, num_coluna, QtWidgets.QTableWidgetItem(str(coluna_conteudo)))
 
     def setupUi(self, FormUsuarios):
         FormUsuarios.setObjectName("FormUsuarios")
@@ -31,6 +94,14 @@ class Ui_FormUsuarios(object):
         self.tableCliente.setRowCount(0)
         self.tableCliente.setObjectName("tableCliente")
         self.tableCliente.setColumnCount(2)
+        self.tableCliente.setSelectionMode(QAbstractItemView.SingleSelection)
+        self.tableCliente.setTextElideMode(Qt.ElideRight)
+        self.tableCliente.setWordWrap(False)
+        self.tableCliente.setSortingEnabled(False)
+        self.tableCliente.horizontalHeader().setDefaultAlignment(Qt.AlignHCenter | Qt.AlignVCenter |
+                                                                 Qt.AlignCenter)
+        self.tableCliente.setSelectionBehavior(QAbstractItemView.SelectRows)
+        self.tableCliente.horizontalHeader().setStretchLastSection(True)
         item = QtWidgets.QTableWidgetItem()
         item.setTextAlignment(QtCore.Qt.AlignCenter)
         font = QtGui.QFont()
@@ -126,6 +197,10 @@ class Ui_FormUsuarios(object):
         FormUsuarios.setTabOrder(self.tableCliente, self.btnAlterarUsuario)
         FormUsuarios.setTabOrder(self.btnAlterarUsuario, self.btnCadastrarUsuario)
 
+        self.btnPesquisarUsuario.clicked.connect(self.click_btn_pesquisar)
+        self.btnAlterarUsuario.clicked.connect(self.click_btn_alterar_usuario)
+        self.btnExcluirUsuario.clicked.connect(self.click_btn_excluir_usuario)
+        self.btnCadastrarUsuario.clicked.connect(self.click_btn_cadastrar_usuario)
     def retranslateUi(self, FormUsuarios):
         _translate = QtCore.QCoreApplication.translate
         FormUsuarios.setWindowTitle(_translate("FormUsuarios", "Usuários"))
