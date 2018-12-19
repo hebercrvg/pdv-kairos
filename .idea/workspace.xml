@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b9d65482-ca7b-4beb-9f1a-ab9a56af52d4" name="Default" comment="Commit 19/12/2018">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/UsuarioCTR.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/UsuarioCTR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/DAO/UsuarioDAO.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/DAO/UsuarioDAO.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/DAO/pdvkairosBD.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/FormLogin.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/FormLogin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/FormMenuPrincipal.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/FormMenuPrincipal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/FormUsuarios.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/FormUsuarios.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/pdvkairosBD.db" beforeDir="false" afterPath="$PROJECT_DIR$/view/pdvkairosBD.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/pdvkairosBD.db" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,96 +41,27 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="296" />
-          <entry key="py" value="16151" />
+          <entry key="py" value="16196" />
           <entry key="txt" value="48" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="48" />
-          <entry key="Python" value="16447" />
+          <entry key="Python" value="16492" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/view/FormLogin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="98" column="20" lean-forward="true" selection-start-line="100" selection-end-line="108" selection-end-column="25" />
+            <state relative-caret-position="618">
+              <caret line="94" column="32" selection-start-line="94" selection-start-column="31" selection-end-line="94" selection-end-column="32" />
               <folding>
                 <element signature="e#0#75#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/view/FormMenuPrincipal.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#66#0" expanded="true" />
-                <marker date="1545246766373" expanded="true" signature="452:604" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/FormUsuarios.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-              <folding>
-                <marker date="1545246225770" expanded="true" signature="486:666" ph="..." />
-                <marker date="1545246225770" expanded="true" signature="1481:2019" ph="..." />
-                <marker date="1545246225770" expanded="true" signature="2081:3018" ph="..." />
-                <marker date="1545246225770" expanded="true" signature="3013:3018" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/FormCadastrarUsuario.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-              <folding>
-                <element signature="e#0#75#0" expanded="true" />
-                <marker date="1545246541594" expanded="true" signature="266:868" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/UsuarioCTR.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="109" column="12" lean-forward="true" selection-start-line="109" selection-start-column="12" selection-end-line="114" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/DAO/UsuarioDAO.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-              <folding>
-                <marker date="1545246690794" expanded="true" signature="1000:1200" ph="..." />
-                <marker date="1545246690794" expanded="true" signature="1231:1240" ph="..." />
-                <marker date="1545246690794" expanded="true" signature="1231:1440" ph="..." />
-                <marker date="1545246690794" expanded="true" signature="1470:1479" ph="..." />
-                <marker date="1545246690794" expanded="true" signature="1470:1637" ph="..." />
               </folding>
             </state>
           </provider>
@@ -328,7 +253,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.FormMenuPrincipal">
+  <component name="RunManager" selected="Python.main">
     <configuration name="FormCadastrarUsuario" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="pdv-kairos" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -413,7 +338,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="UsuarioCTR" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="pdv-kairos" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -421,11 +346,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/controller" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/controller/UsuarioCTR.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -436,18 +361,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.FormUsuarios" />
-      <item itemvalue="Python.UsuarioCTR" />
       <item itemvalue="Python.FormLogin" />
       <item itemvalue="Python.FormCadastrarUsuario" />
       <item itemvalue="Python.FormMenuPrincipal" />
+      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.FormMenuPrincipal" />
         <item itemvalue="Python.FormLogin" />
         <item itemvalue="Python.FormUsuarios" />
         <item itemvalue="Python.FormCadastrarUsuario" />
-        <item itemvalue="Python.UsuarioCTR" />
       </list>
     </recent_temporary>
   </component>
@@ -665,7 +590,14 @@
       <option name="project" value="LOCAL" />
       <updated>1545226837946</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Commit 19/12/2018">
+      <created>1545246982951</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1545246982951</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1025,23 +957,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/FormLogin.py">
+    <entry file="file://$PROJECT_DIR$/view/FormMenuPrincipal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="98" column="20" lean-forward="true" selection-start-line="100" selection-end-line="108" selection-end-column="25" />
+        <state relative-caret-position="204">
+          <caret line="18" column="33" lean-forward="true" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
           <folding>
-            <element signature="e#0#75#0" expanded="true" />
+            <element signature="e#0#66#0" expanded="true" />
+            <marker date="1545246811353" expanded="true" signature="452:600" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/FormMenuPrincipal.py">
+    <entry file="file://$PROJECT_DIR$/view/FormLogin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+        <state relative-caret-position="618">
+          <caret line="94" column="32" selection-start-line="94" selection-start-column="31" selection-end-line="94" selection-end-column="32" />
           <folding>
-            <element signature="e#0#66#0" expanded="true" />
-            <marker date="1545246766373" expanded="true" signature="452:604" ph="..." />
+            <element signature="e#0#75#0" expanded="true" />
           </folding>
         </state>
       </provider>
